@@ -204,7 +204,7 @@ X = df[feature_cols].values
 Y = df[target_col].values
 
 #agile-approach to model training and predictions using iterative training and evaluation
-n_iterations=1
+n_iterations=10
 tree_accuracies=[]
 bayes_accuracies=[]
 tree_f1s=[]
