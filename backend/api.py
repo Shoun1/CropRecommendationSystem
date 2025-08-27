@@ -1,10 +1,6 @@
 from fastapi import FastAPI
 from pydantic import BaseModel
 import joblib
-import numpy as np
-from crop_rec import predictions_naive_bayes
-import pandas as pd
-from pydantic import BaseModel
 
 model = joblib.load('Bayesian_model.pkl')
 
@@ -20,12 +16,6 @@ class CropInput(BaseModel):
 @app.post("/")
 def home():
     return {"message": "Welcome to the Crop Recommendation System"}
-
-'''@app.post("/predict")
-def predict_crop(input_data: CropInput):
-    data = np.array([[input_data.N, input_data.P, input_data.K, input_data.ph, input_data.rainfall]])
-    prediction = model.predict(data)
-    return {"prediction": prediction[0]}'''
 
 from fastapi import Query
 

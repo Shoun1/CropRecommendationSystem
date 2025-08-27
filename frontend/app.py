@@ -29,7 +29,9 @@ if st.button("Predict"):
     
     tree_prediction = tree_model.predict(input_data)
     predicted_index = np.argmax(tree_prediction)
+    
     bayesian_prediction = bayesian_model.predict(input_data)
+
     st.write(f"Decision Tree Prediction: {crop_labels[predicted_index]}")
     st.write(f"Naive Bayes Prediction: {bayesian_prediction[0]}")'''
 
