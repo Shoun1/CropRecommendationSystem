@@ -45,6 +45,13 @@ def exploratory_data_analysis(df):
     print("\nUnique Values per Column:")
     print(df['label'].value_counts())
 
+	#correlation matrix
+	plt.figure(figsize=(10,6))
+    sns.heatmap(df.corr(), annot=True, cmap="coolwarm")
+    plt.title("Feature Correlation Heatmap")
+    plt.show()
+
+	df.groupby('label')[feature_cols].mean()
 
 def preprocess_data(df):
 	# Remove rows with missing values
